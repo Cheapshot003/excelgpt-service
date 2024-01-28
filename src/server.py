@@ -16,5 +16,7 @@ def get_root():
 
 @app.post("/v1/gpt-prompt")
 async def gpt_prompt(prompt: Prompt) -> str:
+    print(prompt.prompt)
+    print(prompt.data)
     return openai_srv.send_prompt(prompt)
 
